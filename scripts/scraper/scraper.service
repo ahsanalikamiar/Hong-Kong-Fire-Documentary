@@ -1,5 +1,9 @@
 # systemd service file for News Scraper Daemon
 # 
+# Prerequisites:
+#   - gh CLI must be authenticated: gh auth login
+#   - FORK_REPO must be set in the environment file
+#
 # Installation:
 #   1. Copy this file to /etc/systemd/system/news-scraper.service
 #   2. Edit the file to set correct paths and user
@@ -26,14 +30,13 @@ Group=YOUR_USERNAME
 # Set the working directory to the repo root
 WorkingDirectory=/home/YOUR_USERNAME/Hong-Kong-Fire-Documentary
 
-# Load environment variables from file (recommended - more secure)
+# Load environment variables from file
 # This file should contain:
-#   GITHUB_TOKEN=your_token_here
 #   FORK_REPO=username/repo-name
 EnvironmentFile=/home/YOUR_USERNAME/.scraper_env
 
 # Run the daemon
-ExecStart=/usr/bin/python3 /home/YOUR_USERNAME/Hong-Kong-Fire-Documentary/scripts/scraper/daemon.py
+ExecStart=/home/YOUR_USERNAME/Hong-Kong-Fire-Documentary/venv/bin/python /home/YOUR_USERNAME/Hong-Kong-Fire-Documentary/scripts/scraper/daemon.py
 
 # Restart on failure
 Restart=on-failure
@@ -45,4 +48,3 @@ StandardError=journal
 
 [Install]
 WantedBy=multi-user.target
-

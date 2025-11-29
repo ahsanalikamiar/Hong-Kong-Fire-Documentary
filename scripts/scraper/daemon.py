@@ -3,8 +3,11 @@
 News Scraper Daemon for Hong Kong Fire Documentary
 Runs 24/7 on a machine, syncs with upstream, scrapes URLs, creates PRs.
 
+Requirements:
+    - gh CLI installed and authenticated (run: gh auth login)
+    - Git configured with push access to your fork
+
 Environment Variables Required:
-    GITHUB_TOKEN - Personal Access Token with repo and PR permissions
     FORK_REPO    - Your fork's repo path (e.g., 'username/repo-name')
 
 Optional Environment Variables:
@@ -26,7 +29,6 @@ import sys
 import time
 from datetime import datetime, timedelta
 from pathlib import Path
-import requests
 
 # Project paths
 SCRIPT_DIR = Path(__file__).parent.resolve()
@@ -78,31 +80,29 @@ def setup_logging():
     return logger
 
 
-def run_cmd(cmd: list[str], cwd: Path = None, check: bool = True) -> subprocess.CompletedProcess:
+def run_cmd(cmd: list[str], cwd: Path = None, check: bool = True, env: dict = None) -> subprocess.CompletedProcess:
     """Run a shell command and return the result"""
+    # Merge environment, unsetting GITHUB_TOKEN to let gh use its own auth
+    run_env = os.environ.copy()
+    if env:
+        run_env.update(env)
+    # Unset GITHUB_TOKEN so gh CLI uses its own authentication
+    run_env.pop("GITHUB_TOKEN", None)
+    
     try:
         result = subprocess.run(
             cmd,
             cwd=cwd or PROJECT_ROOT,
             capture_output=True,
             text=True,
-            check=check
+            check=check,
+            env=run_env
         )
         return result
     except subprocess.CalledProcessError as e:
         logging.error(f"Command failed: {' '.join(cmd)}")
         logging.error(f"stderr: {e.stderr}")
         raise
-
-
-def get_github_token() -> str:
-    """Get GitHub token from environment variable"""
-    token = os.environ.get("GITHUB_TOKEN")
-    if not token:
-        logging.error("GITHUB_TOKEN environment variable not set!")
-        logging.error("Please set it: export GITHUB_TOKEN='your_token_here'")
-        sys.exit(1)
-    return token
 
 
 def get_fork_repo() -> str:
@@ -119,6 +119,21 @@ def get_fork_owner() -> str:
     return get_fork_repo().split("/")[0]
 
 
+def check_gh_auth() -> bool:
+    """Check if gh CLI is authenticated"""
+    try:
+        result = run_cmd(["gh", "auth", "status"], check=False)
+        if result.returncode != 0:
+            logging.error("gh CLI is not authenticated!")
+            logging.error("Please run: gh auth login")
+            return False
+        logging.info("gh CLI authenticated")
+        return True
+    except FileNotFoundError:
+        logging.error("gh CLI not found! Please install it: https://cli.github.com/")
+        return False
+
+
 def setup_git_remotes():
     """Ensure git remotes are configured correctly"""
     logging.info("Setting up git remotes...")
@@ -131,12 +146,11 @@ def setup_git_remotes():
         run_cmd(["git", "remote", "add", "upstream", UPSTREAM_URL])
         logging.info(f"Added upstream remote: {UPSTREAM_URL}")
     
-    # Ensure origin points to fork
-    token = get_github_token()
+    # Ensure origin points to fork (use gh for auth)
     fork_repo = get_fork_repo()
-    fork_url_with_token = f"https://{token}@github.com/{fork_repo}.git"
-    run_cmd(["git", "remote", "set-url", "origin", fork_url_with_token])
-    logging.info("Configured origin remote with authentication")
+    fork_url = f"https://github.com/{fork_repo}.git"
+    run_cmd(["git", "remote", "set-url", "origin", fork_url])
+    logging.info("Configured origin remote")
 
 
 def sync_with_upstream() -> bool:
@@ -249,27 +263,23 @@ def commit_changes() -> bool:
 
 
 def get_open_pr() -> dict | None:
-    """Check if there's an existing open PR from the scraper branch"""
-    token = get_github_token()
+    """Check if there's an existing open PR from the scraper branch using gh CLI"""
     fork_owner = get_fork_owner()
     
-    url = f"https://api.github.com/repos/{UPSTREAM_REPO}/pulls"
-    headers = {
-        "Authorization": f"token {token}",
-        "Accept": "application/vnd.github.v3+json"
-    }
-    params = {
-        "head": f"{fork_owner}:{PR_BRANCH}",
-        "state": "open"
-    }
-    
     try:
-        response = requests.get(url, headers=headers, params=params)
-        response.raise_for_status()
-        prs = response.json()
+        result = run_cmd([
+            "gh", "pr", "list",
+            "--repo", UPSTREAM_REPO,
+            "--head", f"{fork_owner}:{PR_BRANCH}",
+            "--state", "open",
+            "--json", "number,url",
+            "--limit", "1"
+        ], check=False)
         
-        if prs:
-            return prs[0]  # Return first open PR
+        if result.returncode == 0 and result.stdout.strip():
+            prs = json.loads(result.stdout)
+            if prs:
+                return prs[0]
         return None
         
     except Exception as e:
@@ -278,19 +288,13 @@ def get_open_pr() -> dict | None:
 
 
 def close_pr(pr_number: int) -> bool:
-    """Close an existing PR"""
-    token = get_github_token()
-    
-    url = f"https://api.github.com/repos/{UPSTREAM_REPO}/pulls/{pr_number}"
-    headers = {
-        "Authorization": f"token {token}",
-        "Accept": "application/vnd.github.v3+json"
-    }
-    data = {"state": "closed"}
-    
+    """Close an existing PR using gh CLI"""
     try:
-        response = requests.patch(url, headers=headers, json=data)
-        response.raise_for_status()
+        run_cmd([
+            "gh", "pr", "close",
+            str(pr_number),
+            "--repo", UPSTREAM_REPO
+        ])
         logging.info(f"Closed PR #{pr_number}")
         return True
         
@@ -315,7 +319,9 @@ def push_to_pr_branch() -> bool:
             # Create new branch from main
             run_cmd(["git", "checkout", "-b", PR_BRANCH, MAIN_BRANCH])
         
-        # Force push to origin
+        # Force push to origin using gh for authentication
+        run_cmd(["gh", "repo", "sync", "--source", f".:{PR_BRANCH}", "--force"], check=False)
+        # Fallback to git push
         run_cmd(["git", "push", "origin", PR_BRANCH, "--force"])
         
         # Go back to main
@@ -332,15 +338,8 @@ def push_to_pr_branch() -> bool:
 
 
 def create_pr() -> bool:
-    """Create a new PR to upstream"""
-    token = get_github_token()
+    """Create a new PR to upstream using gh CLI"""
     fork_owner = get_fork_owner()
-    
-    url = f"https://api.github.com/repos/{UPSTREAM_REPO}/pulls"
-    headers = {
-        "Authorization": f"token {token}",
-        "Accept": "application/vnd.github.v3+json"
-    }
     
     # Get count of archives for PR description
     archives_dir = PROJECT_ROOT / "content" / "news"
@@ -353,11 +352,8 @@ def create_pr() -> bool:
     
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
     
-    data = {
-        "title": f"[Auto-Scraper] News archives update - {timestamp}",
-        "head": f"{fork_owner}:{PR_BRANCH}",
-        "base": MAIN_BRANCH,
-        "body": f"""## Automated News Archive Update
+    title = f"[Auto-Scraper] News archives update - {timestamp}"
+    body = f"""## Automated News Archive Update
 
 This PR was automatically generated by the news scraper daemon.
 
@@ -373,23 +369,27 @@ This PR was automatically generated by the news scraper daemon.
 ---
 *This PR will be automatically replaced if not merged before the next hourly update.*
 """
-    }
     
     try:
-        response = requests.post(url, headers=headers, json=data)
-        response.raise_for_status()
-        pr_data = response.json()
-        logging.info(f"Created PR #{pr_data['number']}: {pr_data['html_url']}")
-        return True
+        result = run_cmd([
+            "gh", "pr", "create",
+            "--repo", UPSTREAM_REPO,
+            "--head", f"{fork_owner}:{PR_BRANCH}",
+            "--base", MAIN_BRANCH,
+            "--title", title,
+            "--body", body
+        ], check=False)
         
-    except requests.exceptions.HTTPError as e:
-        if e.response.status_code == 422:
-            # PR already exists or no changes
-            logging.info("PR already exists or no changes to submit")
+        if result.returncode == 0:
+            pr_url = result.stdout.strip()
+            logging.info(f"Created PR: {pr_url}")
+            return True
+        elif "already exists" in result.stderr.lower():
+            logging.info("PR already exists")
+            return True
         else:
-            logging.error(f"Failed to create PR: {e}")
-            logging.error(f"Response: {e.response.text}")
-        return False
+            logging.error(f"Failed to create PR: {result.stderr}")
+            return False
         
     except Exception as e:
         logging.error(f"Failed to create PR: {e}")
@@ -446,8 +446,9 @@ def run_daemon(run_once: bool = False):
     logging.info(f"PR interval: {PR_INTERVAL_MINUTES} minutes")
     logging.info("=" * 60)
     
-    # Verify token and fork repo
-    get_github_token()
+    # Verify gh CLI auth and fork repo
+    if not check_gh_auth():
+        sys.exit(1)
     get_fork_repo()
     
     # Setup git remotes
@@ -487,15 +488,13 @@ def run_daemon(run_once: bool = False):
                 logging.info("-" * 40)
                 logging.info("Starting PR cycle...")
                 
-                # Check if we have any archives to submit
-                if has_local_changes() or True:  # Always try to create PR
-                    # Push to fork first
-                    try:
-                        run_cmd(["git", "push", "origin", MAIN_BRANCH])
-                    except:
-                        pass
-                    
-                    manage_pr()
+                # Push to fork first
+                try:
+                    run_cmd(["git", "push", "origin", MAIN_BRANCH])
+                except:
+                    pass
+                
+                manage_pr()
                 
                 last_pr = now
                 logging.info("PR cycle complete")
@@ -530,4 +529,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

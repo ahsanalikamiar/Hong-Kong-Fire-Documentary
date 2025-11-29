@@ -96,3 +96,21 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2025-11-29 02:10:52 | INFO     | Already up to date with upstream
 2025-11-29 02:10:52 | INFO     | Running scraper...
 2025-11-29 02:10:52 | INFO     | Found 53 new URLs to scrape
+2025-11-29 02:26:38 | INFO     | ============================================================
+2025-11-29 02:26:38 | INFO     | News Scraper Daemon Starting
+2025-11-29 02:26:38 | INFO     | Fork: Hilo-Hilo/Hong-Kong-Fire-Documentary
+2025-11-29 02:26:38 | INFO     | Upstream: Hong-Kong-Emergency-Coordination-Hub/Hong-Kong-Fire-Documentary
+2025-11-29 02:26:38 | INFO     | Sync interval: 10 minutes
+2025-11-29 02:26:38 | INFO     | PR interval: 60 minutes
+2025-11-29 02:26:38 | INFO     | ============================================================
+2025-11-29 02:26:39 | INFO     | gh CLI authenticated
+2025-11-29 02:26:39 | INFO     | Setting up git remotes...
+2025-11-29 02:26:39 | INFO     | Configured origin remote
+2025-11-29 02:26:39 | INFO     | ----------------------------------------
+2025-11-29 02:26:39 | INFO     | Starting sync cycle...
+2025-11-29 02:26:39 | INFO     | Syncing with upstream...
+2025-11-29 02:26:39 | INFO     | Already up to date with upstream
+2025-11-29 02:26:39 | INFO     | Running scraper...
+2025-11-29 02:26:39 | INFO     | Found 44 new URLs to scrape
+2025-11-29 02:36:40 | ERROR    | Scraper error: [Errno 32] Broken pipe
+2025-11-29 02:36:40 | INFO     | Committing changes...

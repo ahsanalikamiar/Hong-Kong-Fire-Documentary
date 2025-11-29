@@ -30,42 +30,67 @@ fi
 echo ""
 echo -e "${GREEN}Step 1: Installing system dependencies...${NC}"
 sudo apt-get update
-sudo apt-get install -y python3 python3-pip python3-venv git
+sudo apt-get install -y python3 python3-pip python3-venv git curl
 
-# Step 2: Create virtual environment
+# Step 2: Install gh CLI if not present
 echo ""
-echo -e "${GREEN}Step 2: Setting up Python virtual environment...${NC}"
+echo -e "${GREEN}Step 2: Installing GitHub CLI (gh)...${NC}"
+if ! command -v gh &> /dev/null; then
+    # Install gh CLI
+    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+    sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+    sudo apt-get update
+    sudo apt-get install -y gh
+    echo -e "${GREEN}gh CLI installed!${NC}"
+else
+    echo -e "${GREEN}gh CLI already installed: $(gh --version | head -1)${NC}"
+fi
+
+# Step 3: Authenticate gh CLI
+echo ""
+echo -e "${GREEN}Step 3: GitHub CLI Authentication${NC}"
+if ! gh auth status &> /dev/null; then
+    echo -e "${YELLOW}Please authenticate with GitHub:${NC}"
+    gh auth login
+else
+    echo -e "${GREEN}Already authenticated with GitHub${NC}"
+fi
+
+# Step 4: Create virtual environment
+echo ""
+echo -e "${GREEN}Step 4: Setting up Python virtual environment...${NC}"
 cd "$REPO_ROOT"
 python3 -m venv venv
 source venv/bin/activate
 
-# Step 3: Install Python dependencies
+# Step 5: Install Python dependencies
 echo ""
-echo -e "${GREEN}Step 3: Installing Python dependencies...${NC}"
+echo -e "${GREEN}Step 5: Installing Python dependencies...${NC}"
 pip install --upgrade pip
 pip install -r scripts/scraper/requirements.txt
 
-# Step 4: Install Playwright browsers
+# Step 6: Install Playwright browsers
 echo ""
-echo -e "${GREEN}Step 4: Installing Playwright browsers...${NC}"
+echo -e "${GREEN}Step 6: Installing Playwright browsers...${NC}"
 playwright install chromium
 playwright install-deps chromium
 
-# Step 5: Set up logs directory
+# Step 7: Set up logs directory
 echo ""
-echo -e "${GREEN}Step 5: Setting up logs directory...${NC}"
+echo -e "${GREEN}Step 7: Setting up logs directory...${NC}"
 mkdir -p logs
 touch logs/.gitkeep
 
-# Step 6: Configure git
+# Step 8: Configure git
 echo ""
-echo -e "${GREEN}Step 6: Configuring git...${NC}"
+echo -e "${GREEN}Step 8: Configuring git...${NC}"
 git config user.name "News Scraper Bot"
 git config user.email "scraper@local"
 
-# Step 7: Configuration Setup
+# Step 9: Configuration Setup
 echo ""
-echo -e "${YELLOW}Step 7: Configuration Setup${NC}"
+echo -e "${YELLOW}Step 9: Configuration Setup${NC}"
 echo ""
 
 # Get Fork Repo
@@ -77,48 +102,54 @@ if [ -z "$FORK_REPO" ]; then
     exit 1
 fi
 
-# Get GitHub Token
-echo ""
-echo "You need a GitHub Personal Access Token (PAT) with these permissions:"
-echo "  - Contents: Read and Write"
-echo "  - Pull requests: Read and Write"
-echo ""
-echo "Generate one at: https://github.com/settings/tokens?type=beta"
-echo ""
-
-read -p "Enter your GitHub token: " GITHUB_TOKEN
-
-if [ -z "$GITHUB_TOKEN" ]; then
-    echo -e "${RED}GitHub token is required!${NC}"
-    exit 1
-fi
-
 # Create environment file
 ENV_FILE="$HOME/.scraper_env"
 cat > "$ENV_FILE" << EOF
-GITHUB_TOKEN=$GITHUB_TOKEN
 FORK_REPO=$FORK_REPO
 EOF
 chmod 600 "$ENV_FILE"
 echo -e "${GREEN}Configuration saved to $ENV_FILE${NC}"
 
 # Export for current session
-export GITHUB_TOKEN
 export FORK_REPO
 
-# Step 8: Test the daemon
+# Step 10: Configure DNS (recommended)
 echo ""
-echo -e "${GREEN}Step 8: Testing the daemon...${NC}"
+echo -e "${YELLOW}Step 10: DNS Configuration${NC}"
+echo ""
+echo "For reliable operation, we recommend using Google DNS (8.8.8.8)."
+echo "Some networks have slow DNS which causes timeouts."
+echo ""
+read -p "Configure Google DNS for your network interface? (y/n): " CONFIGURE_DNS
+
+if [ "$CONFIGURE_DNS" = "y" ]; then
+    # Get the default network interface
+    DEFAULT_IF=$(ip route | grep default | awk '{print $5}' | head -1)
+    echo "Detected network interface: $DEFAULT_IF"
+    read -p "Use this interface? (y/n): " USE_DEFAULT_IF
+    
+    if [ "$USE_DEFAULT_IF" = "y" ]; then
+        sudo resolvectl dns "$DEFAULT_IF" 8.8.8.8 8.8.4.4
+        echo -e "${GREEN}DNS configured to use Google DNS (8.8.8.8)${NC}"
+        echo -e "${YELLOW}Note: This is temporary and will reset on reboot.${NC}"
+        echo "To make permanent, see README.md DNS Setup section."
+    fi
+fi
+
+# Step 11: Test the daemon
+echo ""
+echo -e "${GREEN}Step 11: Testing the daemon...${NC}"
 echo "Running a single sync cycle..."
 
 cd "$REPO_ROOT"
 source venv/bin/activate
+source "$ENV_FILE"
 python scripts/scraper/daemon.py --once
 echo -e "${GREEN}Test completed!${NC}"
 
-# Step 9: Set up systemd service
+# Step 12: Set up systemd service
 echo ""
-echo -e "${YELLOW}Step 9: systemd Service Setup${NC}"
+echo -e "${YELLOW}Step 12: systemd Service Setup${NC}"
 echo ""
 read -p "Do you want to install the systemd service? (y/n): " INSTALL_SERVICE
 
@@ -185,4 +216,3 @@ echo "  journalctl -u news-scraper -f"
 echo "  # or"
 echo "  tail -f $REPO_ROOT/logs/scraper.log"
 echo ""
-

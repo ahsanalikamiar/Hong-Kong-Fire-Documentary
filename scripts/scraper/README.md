@@ -7,9 +7,17 @@ A parallel web scraper that automatically archives news articles from markdown l
 - **Parallel scraping** - Scrapes multiple domains simultaneously (up to 5 at once)
 - **Duplicate detection** - Tracks scraped URLs to avoid re-scraping
 - **Auto-sync** - Syncs with upstream repo every 10 minutes
-- **Auto-PR** - Creates pull requests to upstream every hour
+- **Auto-PR** - Creates pull requests to upstream every hour (via `gh` CLI)
 - **Rate limiting** - Configurable delays per domain to be respectful
 - **Logging** - All activity logged to `logs/scraper.log`
+
+## Prerequisites
+
+- **Python 3.10+**
+- **gh CLI** - GitHub CLI for authentication and PR creation
+  - Install: https://cli.github.com/
+  - Authenticate: `gh auth login`
+- **Google DNS recommended** - For reliable DNS resolution (see [DNS Setup](#dns-setup))
 
 ## Quick Start
 
@@ -26,22 +34,25 @@ The script will:
 1. Install system dependencies
 2. Create Python virtual environment
 3. Install Python packages and Playwright
-4. Prompt for your GitHub token and fork repo
+4. Prompt for your fork repo name
 5. Optionally install as a systemd service
 
 ### Option 2: Manual Setup
 
 ```bash
-# 1. Install dependencies
+# 1. Install gh CLI and authenticate
+# See: https://cli.github.com/
+gh auth login
+
+# 2. Install Python dependencies
 pip install -r scripts/scraper/requirements.txt
 playwright install chromium
 playwright install-deps chromium  # Linux only
 
-# 2. Set environment variables
-export GITHUB_TOKEN="your_github_personal_access_token"
+# 3. Set environment variables
 export FORK_REPO="your-username/Hong-Kong-Fire-Documentary"
 
-# 3. Run the scraper
+# 4. Run the scraper
 python scripts/scraper/scraper.py --dry-run  # Test first
 python scripts/scraper/scraper.py            # Actually scrape
 ```
@@ -50,8 +61,7 @@ python scripts/scraper/scraper.py            # Actually scrape
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `GITHUB_TOKEN` | Yes (for daemon) | GitHub Personal Access Token with `contents:write` and `pull_requests:write` |
-| `FORK_REPO` | Yes (for daemon) | Your fork's repo path, e.g., `username/Hong-Kong-Fire-Documentary` |
+| `FORK_REPO` | Yes | Your fork's repo path, e.g., `username/Hong-Kong-Fire-Documentary` |
 | `UPSTREAM_REPO` | No | Upstream repo (default: `Hong-Kong-Emergency-Coordination-Hub/Hong-Kong-Fire-Documentary`) |
 | `PR_BRANCH` | No | Branch name for PRs (default: `scraper-updates`) |
 | `MAIN_BRANCH` | No | Main branch name (default: `main`) |
@@ -84,7 +94,7 @@ python scraper.py --source HK01 --limit 5 --dry-run -v
 
 ### `daemon.py` - 24/7 Daemon Service
 
-Runs continuously, syncing and scraping on schedule.
+Runs continuously, syncing and scraping on schedule. Uses `gh` CLI for GitHub operations.
 
 ```bash
 # Run daemon (runs forever)
@@ -160,51 +170,81 @@ content/news/
 For 24/7 operation on Ubuntu/Debian:
 
 ```bash
-# 1. Create environment file
+# 1. Authenticate gh CLI
+gh auth login
+
+# 2. Create environment file
 cat > ~/.scraper_env << EOF
-GITHUB_TOKEN=your_token_here
 FORK_REPO=your-username/Hong-Kong-Fire-Documentary
 EOF
 chmod 600 ~/.scraper_env
 
-# 2. Edit service file (update paths and username)
+# 3. Edit service file (update paths and username)
 sudo cp scripts/scraper/scraper.service /etc/systemd/system/news-scraper.service
 sudo nano /etc/systemd/system/news-scraper.service
 
-# 3. Enable and start
+# 4. Enable and start
 sudo systemctl daemon-reload
 sudo systemctl enable news-scraper
 sudo systemctl start news-scraper
 
-# 4. Check status
+# 5. Check status
 sudo systemctl status news-scraper
 journalctl -u news-scraper -f
 ```
 
-## GitHub Token Setup
+## DNS Setup
 
-1. Go to <https://github.com/settings/tokens?type=beta>
-2. Click "Generate new token"
-3. Select your fork repository
-4. Grant permissions:
-   - **Contents**: Read and Write
-   - **Pull requests**: Read and Write
-5. Copy the token and save it securely
+Some networks (especially university/corporate WiFi) have slow or unreliable DNS servers that cause timeout errors. We recommend using Google DNS for reliable operation.
+
+### Temporary Fix (until reboot)
+
+```bash
+# Replace wlP9s9 with your network interface name (check with: ip link)
+sudo resolvectl dns wlP9s9 8.8.8.8 8.8.4.4
+```
+
+### Permanent Fix (NetworkManager)
+
+```bash
+# Replace "Your-WiFi-Name" with your connection name (check with: nmcli con show)
+nmcli con mod "Your-WiFi-Name" ipv4.dns "8.8.8.8 8.8.4.4"
+nmcli con mod "Your-WiFi-Name" ipv4.ignore-auto-dns yes
+nmcli con down "Your-WiFi-Name" && nmcli con up "Your-WiFi-Name"
+```
+
+### Verify DNS
+
+```bash
+# Should resolve in < 100ms
+time resolvectl query github.com
+```
 
 ## Troubleshooting
 
-### "GITHUB_TOKEN environment variable not set"
+### "gh CLI is not authenticated"
 
 ```bash
-export GITHUB_TOKEN="your_token_here"
-# Or source your env file:
-source ~/.scraper_env
+gh auth login
+# Follow the prompts to authenticate
 ```
 
 ### "FORK_REPO environment variable not set"
 
 ```bash
 export FORK_REPO="your-username/Hong-Kong-Fire-Documentary"
+```
+
+### DNS/Network timeout errors
+
+If you see errors like `Temporary failure in name resolution` or connections timing out:
+
+```bash
+# Check current DNS response time
+time resolvectl query github.com
+
+# If slow (> 1 second), switch to Google DNS:
+sudo resolvectl dns wlP9s9 8.8.8.8 8.8.4.4
 ```
 
 ### Timeout errors on certain sites
@@ -225,6 +265,7 @@ journalctl -u news-scraper -n 50
 # - Wrong paths in service file
 # - Missing environment file
 # - Python venv not activated
+# - gh CLI not authenticated
 ```
 
 ### Service starts before WiFi is connected
@@ -248,7 +289,7 @@ sudo systemctl restart news-scraper
 | File | Purpose |
 |------|---------|
 | `scraper.py` | Main scraper with parallel processing |
-| `daemon.py` | 24/7 daemon service |
+| `daemon.py` | 24/7 daemon service (uses gh CLI) |
 | `config.yml` | Rate limits and site-specific settings |
 | `requirements.txt` | Python dependencies |
 | `scraped_urls.json` | Registry of scraped URLs (auto-generated) |
