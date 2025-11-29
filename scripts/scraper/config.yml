@@ -1,0 +1,44 @@
+# News Scraper Configuration
+# Rate limiting and site-specific settings
+
+rate_limit:
+  # Default delay between requests (seconds)
+  delay_seconds: 3
+  # Maximum retry attempts for failed requests
+  max_retries: 3
+  # Request timeout (seconds) - increased for slow/protected sites
+  timeout_seconds: 60
+
+# Browser user agent string
+user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
+# Site-specific overrides
+# Use domain without www prefix (e.g., bbc.co.uk not www.bbc.co.uk)
+sites:
+  # International media - may have stricter protections
+  bbc.co.uk:
+    delay_seconds: 5
+  bbc.com:
+    delay_seconds: 5
+  scmp.com:
+    delay_seconds: 5
+    # Note: SCMP has soft paywall, may need cookies for full access
+  cnn.com:
+    delay_seconds: 5
+  japantimes.co.jp:
+    delay_seconds: 4
+
+  # Hong Kong local media
+  hk01.com:
+    delay_seconds: 3
+  news.now.com:
+    delay_seconds: 3
+  news.rthk.hk:
+    delay_seconds: 3
+  stheadline.com:
+    delay_seconds: 3
+  on.cc:
+    delay_seconds: 3
+  hkej.com:
+    delay_seconds: 3
+

@@ -1,0 +1,47 @@
+# systemd service file for News Scraper Daemon
+# 
+# Installation:
+#   1. Copy this file to /etc/systemd/system/news-scraper.service
+#   2. Edit the file to set correct paths and user
+#   3. Run: sudo systemctl daemon-reload
+#   4. Run: sudo systemctl enable news-scraper
+#   5. Run: sudo systemctl start news-scraper
+#
+# Commands:
+#   sudo systemctl status news-scraper   # Check status
+#   sudo systemctl stop news-scraper     # Stop daemon
+#   sudo systemctl restart news-scraper  # Restart daemon
+#   journalctl -u news-scraper -f        # View logs
+
+[Unit]
+Description=Hong Kong Fire Documentary News Scraper Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_USERNAME
+Group=YOUR_USERNAME
+
+# Set the working directory to the repo root
+WorkingDirectory=/home/YOUR_USERNAME/Hong-Kong-Fire-Documentary
+
+# Set environment variable for GitHub token
+Environment="GITHUB_TOKEN=your_token_here"
+
+# Or use an environment file (more secure)
+# EnvironmentFile=/home/YOUR_USERNAME/.scraper_env
+
+# Run the daemon
+ExecStart=/usr/bin/python3 /home/YOUR_USERNAME/Hong-Kong-Fire-Documentary/scripts/scraper/daemon.py
+
+# Restart on failure
+Restart=on-failure
+RestartSec=30
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+

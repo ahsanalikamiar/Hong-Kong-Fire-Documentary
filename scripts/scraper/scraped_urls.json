@@ -1,0 +1,533 @@
+{
+  "scraped_urls": {
+    "https://news.rthk.hk/rthk/ch/component/k2/1833394-20251126.htm?archive_date=2025-11-26": {
+      "title": "因應大埔宏福苑火警　當局開放兩個社區會堂作臨時庇護中心",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:02:16.350334",
+      "archive_path": "content/news/RTHK 香港電台/archive/因應大埔宏福苑火警-當局開放兩個社區會堂作臨時庇護中心"
+    },
+    "https://www.bbc.com/zhongwen/articles/clydv21ev37o/trad": {
+      "title": "視像直播：香港大埔屋苑五級奪命大火",
+      "source": "BBC 中文網",
+      "scraped_at": "2025-11-29T00:22:51.589631",
+      "archive_path": "content/news/BBC 中文網/archive/視像直播香港大埔屋苑五級奪命大火"
+    },
+    "https://www.bbc.com/zhongwen/articles/c36ze1n44e1o/trad": {
+      "title": "大埔五級火災增至94死76傷：至少63年來最嚴重，料週五早上完成爆破救援工作",
+      "source": "BBC 中文網",
+      "scraped_at": "2025-11-29T00:23:02.150558",
+      "archive_path": "content/news/BBC 中文網/archive/大埔五級火災增至94死76傷至少63年來最嚴重料週五早上完成爆破救援工作"
+    },
+    "https://www.bbc.com/zhongwen/articles/c058pvn2d02o/trad": {
+      "title": "香港大埔宏福苑五級火警：為何發生連環大火？同類火災會否重現？",
+      "source": "BBC 中文網",
+      "scraped_at": "2025-11-29T00:23:12.852476",
+      "archive_path": "content/news/BBC 中文網/archive/香港大埔宏福苑五級火警為何發生連環大火同類火災會否重現"
+    },
+    "https://www.bbc.com/zhongwen/articles/cz7nqgerjg4o/trad": {
+      "title": "香港宏福苑大火26小時：不斷攀升的死亡數字，在希望和絕望中掙扎的親人",
+      "source": "BBC 中文網",
+      "scraped_at": "2025-11-29T00:23:22.558498",
+      "archive_path": "content/news/BBC 中文網/archive/香港宏福苑大火26小時不斷攀升的死亡數字在希望和絕望中掙扎的親人"
+    },
+    "https://www.bbc.com/zhongwen/articles/clykevkpvz7o/trad": {
+      "title": "香港宏福苑大火：128人死亡約200人情況不明，8座大廈火警鐘確認不能有效操作",
+      "source": "BBC 中文網",
+      "scraped_at": "2025-11-29T00:23:31.774909",
+      "archive_path": "content/news/BBC 中文網/archive/香港宏福苑大火128人死亡約200人情況不明8座大廈火警鐘確認不能有效操作"
+    },
+    "https://www.hk01.com/開罐/60297913/大埔宏福苑五級火-香港火警分六級-災難級全港消防員須候命出動": {
+      "title": "大埔宏福苑五級火｜香港火警分六級 災難級全港消防員須候命出動",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:33:08.631803",
+      "archive_path": "content/news/HK01/archive/大埔宏福苑五級火香港火警分六級-災難級全港消防員須候命出動"
+    },
+    "https://www.hk01.com/社會新聞/60297967/宏福苑五級火-鄧炳強對消防員何偉豪殉職深感悲痛-向家屬致慰問": {
+      "title": "宏福苑五級火｜鄧炳強對消防員何偉豪殉職深感悲痛 向家屬致慰問",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:46:57.480911",
+      "archive_path": "content/news/HK01/archive/宏福苑五級火鄧炳強對消防員何偉豪殉職深感悲痛-向家屬致慰問"
+    },
+    "https://www.hk01.com/突發/60297831/直播-宏福苑五級火-至少13死15傷-3消防員傷其中1人亡": {
+      "title": "直播｜宏福苑五級火 至少13死15傷 3消防員傷其中1人亡",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:50:58.304151",
+      "archive_path": "content/news/HK01/archive/直播宏福苑五級火-至少13死15傷-3消防員傷其中1人亡"
+    },
+    "https://www.hk01.com/突發/60297921/宏福苑五級火-網片直擊宏昌閣棚架最先現火種-數分鐘蔓延釀巨災": {
+      "title": "宏福苑火災｜網片直擊宏昌閣棚架最先現火種 數分鐘蔓延釀巨災",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:51:04.551522",
+      "archive_path": "content/news/HK01/archive/宏福苑火災網片直擊宏昌閣棚架最先現火種-數分鐘蔓延釀巨災"
+    },
+    "https://www.hk01.com/地產樓市/60297560/宏福苑五級火-屋苑樓齡42年-設8座大廈近二千伙-7幢被大火波及": {
+      "title": "宏福苑五級火｜屋苑樓齡42年、設8座大廈近二千伙 7幢被大火波及",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:51:10.572841",
+      "archive_path": "content/news/HK01/archive/宏福苑五級火屋苑樓齡42年設8座大廈近二千伙-7幢被大火波及"
+    },
+    "https://www.hk01.com/突發/60297867/大埔宏福苑五級火-多人燒傷抵院-穿-黃金戰衣-消防員熏黑昏迷": {
+      "title": "大埔宏福苑五級火｜多人燒傷抵院 穿「黃金戰衣」消防員熏黑昏迷",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:51:15.848373",
+      "archive_path": "content/news/HK01/archive/大埔宏福苑五級火多人燒傷抵院-穿黃金戰衣消防員熏黑昏迷"
+    },
+    "https://www.hk01.com/突發/60297951/宏福苑五級火-37歲殉職消防員失聯半小時-宏昌閣升降機對開空地尋獲": {
+      "title": "宏福苑五級火｜37歲殉職消防員失聯半小時 宏昌閣升降機空地尋獲",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:51:21.443596",
+      "archive_path": "content/news/HK01/archive/宏福苑五級火37歲殉職消防員失聯半小時-宏昌閣升降機空地尋獲"
+    },
+    "https://www.hk01.com/突發/60297978/大埔宏福苑五級火-消防料風吹雜物致火蔓延7座-內部高溫難上樓": {
+      "title": "大埔宏福苑五級火｜消防料風吹雜物致火蔓延7座 內部高溫難上樓",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:51:27.036887",
+      "archive_path": "content/news/HK01/archive/大埔宏福苑五級火消防料風吹雜物致火蔓延7座-內部高溫難上樓"
+    },
+    "https://www.hk01.com/社會新聞/60297999/宏福苑五級火-殉職消防員何偉豪同袍發文悼念-落更喇-好好休息": {
+      "title": "宏福苑五級火｜殉職消防員何偉豪同袍發文悼念：落更喇，好好休息",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:51:32.553102",
+      "archive_path": "content/news/HK01/archive/宏福苑五級火殉職消防員何偉豪同袍發文悼念落更喇好好休息"
+    },
+    "https://www.hk01.com/熱爆話題/60297929/大埔宏福苑五級火-網民湧消防fb留言-帶著傷痛勇敢救火令人敬佩": {
+      "title": "大埔宏福苑五級火｜網民湧消防fb留言：帶著傷痛勇敢救火令人敬佩",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:51:38.055140",
+      "archive_path": "content/news/HK01/archive/大埔宏福苑五級火網民湧消防fb留言帶著傷痛勇敢救火令人敬佩"
+    },
+    "https://www.hk01.com/熱爆話題/60297947/大埔宏福苑5級火-維修工棚架吸煙片瘋傳-被質問咁反應-網民鬧爆": {
+      "title": "大埔宏福苑5級火│維修工棚架吸煙片瘋傳！被質問咁反應 網民鬧爆",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:51:43.824947",
+      "archive_path": "content/news/HK01/archive/大埔宏福苑5級火維修工棚架吸煙片瘋傳被質問咁反應-網民鬧爆"
+    },
+    "https://www.hk01.com/突發/60298038/宏福苑五級火-政府將統籌捐物資捐款-聯絡房屋局-酒店等供住宿": {
+      "title": "宏福苑五級火｜政府將統籌捐物資捐款 聯絡房屋局、酒店等供住宿",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:51:49.668741",
+      "archive_path": "content/news/HK01/archive/宏福苑五級火政府將統籌捐物資捐款-聯絡房屋局酒店等供住宿"
+    },
+    "https://www.hk01.com/突發/60297831/直播-大埔宏福苑五級火-至少44人死亡-66人傷其中15人危殆": {
+      "title": "直播｜大埔宏福苑五級火 至少44人死亡 66人傷其中15人危殆",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:51:57.418128",
+      "archive_path": "content/news/HK01/archive/直播大埔宏福苑五級火-至少44人死亡-66人傷其中15人危殆"
+    },
+    "https://www.hk01.com/突發/60298057/宏福苑五級火-消防大廈天台救出2生還者-宏昌-宏泰救出最多人": {
+      "title": "大埔宏福苑火災｜消防於天台救出2生還者 宏昌、宏泰救出最多人",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:52:03.727827",
+      "archive_path": "content/news/HK01/archive/大埔宏福苑火災消防於天台救出2生還者-宏昌宏泰救出最多人"
+    },
+    "https://www.hk01.com/社會新聞/60298114/宏福苑大火-幫忙尋親-持續更新-移英子尋父-蘇兆雄獨居宏昌閣": {
+      "title": "宏福苑大火．幫忙尋親．持續更新｜移英子尋父 蘇兆雄獨居宏昌閣",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:52:10.054399",
+      "archive_path": "content/news/HK01/archive/宏福苑大火幫忙尋親持續更新移英子尋父-蘇兆雄獨居宏昌閣"
+    },
+    "https://www.hk01.com/社會新聞/60298162/宏福苑五級火-賑災最新-各界展關懷紛紛來-有何捐助行動逐一問": {
+      "title": "宏福苑五級火．賑災最新｜各界展關懷紛紛來 有何捐助行動逐一問",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:52:15.081804",
+      "archive_path": "content/news/HK01/archive/宏福苑五級火賑災最新各界展關懷紛紛來-有何捐助行動逐一問"
+    },
+    "https://www.hk01.com/財經快訊/60298094/宏福苑火災-持更-比亞迪-字節跳動各捐1千萬-阿里系共捐6千萬": {
+      "title": "大埔宏福苑火災‧捐款持更｜馬雲/騰訊各捐3千萬 阿里系共捐6千萬",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:52:20.725911",
+      "archive_path": "content/news/HK01/archive/大埔宏福苑火災捐款持更馬雲騰訊各捐3千萬-阿里系共捐6千萬"
+    },
+    "https://www.hk01.com/社會新聞/60298279/宏福苑五級火-火炭穗禾苑棚網被指不符防火標準-居民憂災難重演": {
+      "title": "宏福苑五級火｜火炭穗禾苑棚網被指不符防火標準 居民憂災難重演",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:52:26.285679",
+      "archive_path": "content/news/HK01/archive/宏福苑五級火火炭穗禾苑棚網被指不符防火標準-居民憂災難重演"
+    },
+    "https://hk01.com/突發/60298291/宏福苑火災-殉職消防何偉豪拍拖10年-女友慟-你係我嘅驕傲": {
+      "title": "宏福苑火災︱殉職消防何偉豪拍拖10年 女友慟：你係我嘅驕傲",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:52:33.090353",
+      "archive_path": "content/news/HK01/archive/宏福苑火災殉職消防何偉豪拍拖10年-女友慟你係我嘅驕傲"
+    },
+    "https://www.hk01.com/突發/60297831/最新-大埔宏福苑大火128死79傷-200人情況未明-12名消防員受傷": {
+      "title": "最新｜大埔宏福苑大火128死79傷 200人情況未明 12名消防員受傷",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:52:37.910559",
+      "archive_path": "content/news/HK01/archive/最新大埔宏福苑大火128死79傷-200人情況未明-12名消防員受傷"
+    },
+    "https://www.hk01.com/社論/60298494/宏福苑大火-社論-這場集體傷痛-需要集體追責": {
+      "title": "宏福苑大火．社論｜這場集體傷痛 需要集體追責",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:52:43.583011",
+      "archive_path": "content/news/HK01/archive/宏福苑大火社論這場集體傷痛-需要集體追責"
+    },
+    "https://www.hk01.com/即時娛樂/60298481/宏福苑五級火-吳林峰不滿將起火歸咎竹棚-怒轟關愛隊-個腦裝乜x": {
+      "title": "宏福苑五級火｜吳林峰不滿將起火歸咎竹棚 怒轟關愛隊：個腦裝乜X",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:52:49.385170",
+      "archive_path": "content/news/HK01/archive/宏福苑五級火吳林峰不滿將起火歸咎竹棚-怒轟關愛隊個腦裝乜x"
+    },
+    "https://www.hk01.com/即時國際/60298503/大埔宏福苑火災逾70年以來最嚴重-外媒關注-世紀大火-災後應對": {
+      "title": "大埔宏福苑火災逾70年以來最嚴重 外媒關注「世紀大火」災後應對",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:52:54.587854",
+      "archive_path": "content/news/HK01/archive/大埔宏福苑火災逾70年以來最嚴重-外媒關注世紀大火災後應對"
+    },
+    "https://hk01.com/財經快訊/60298500/宏福苑大火-滙豐及恒生合共捐3000萬-另推應急措施支援災民": {
+      "title": "宏福苑大火｜滙豐及恒生合共捐3000萬 另推應急措施支援災民",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:53:00.606642",
+      "archive_path": "content/news/HK01/archive/宏福苑大火滙豐及恒生合共捐3000萬-另推應急措施支援災民"
+    },
+    "https://www.hk01.com/財經快訊/60298593/宏福苑大火-持更-商界躍踴捐輸-助居民渡過難關": {
+      "title": "宏福苑大火‧持更｜李錦記旗下基金捐3千萬 九龍倉捐款3千萬",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:53:06.382191",
+      "archive_path": "content/news/HK01/archive/宏福苑大火持更李錦記旗下基金捐3千萬-九龍倉捐款3千萬"
+    },
+    "https://hk01.com/突發/60298585/宏福苑大火-時序-無情火燒7廈奪逾百命-逾43小時發生了何事": {
+      "title": "宏福苑大火．時序｜無情火燒7廈奪逾百命 逾43小時發生了何事？",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:53:12.987701",
+      "archive_path": "content/news/HK01/archive/宏福苑大火時序無情火燒7廈奪逾百命-逾43小時發生了何事"
+    },
+    "https://www.hk01.com/突發/60298678/宏福苑大火-生還者剖白2-5小時火劫-救人獲讚謙稱-我唔係英雄": {
+      "title": "宏福苑大火｜生還者剖白2.5小時火劫 救人獲讚謙稱：我唔係英雄",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:53:19.093115",
+      "archive_path": "content/news/HK01/archive/宏福苑大火生還者剖白25小時火劫-救人獲讚謙稱我唔係英雄"
+    },
+    "https://www.hk01.com/突發/60298774/宏福苑大火災-管理員逐戶拍門通知逃生-居民網民道謝-無名英雄": {
+      "title": "宏福苑大火災︱管理員逐戶拍門通知逃生 居民網民道謝：無名英雄",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:53:24.288297",
+      "archive_path": "content/news/HK01/archive/宏福苑大火災管理員逐戶拍門通知逃生-居民網民道謝無名英雄"
+    },
+    "https://hk01.com/社會新聞/60298779/宏福苑火災-政府設施明起下半旗誌哀-18區設弔唁處供市民悼念": {
+      "title": "宏福苑火災｜政府設施明起下半旗誌哀 18區設弔唁處供市民悼念",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:53:30.272530",
+      "archive_path": "content/news/HK01/archive/宏福苑火災政府設施明起下半旗誌哀-18區設弔唁處供市民悼念"
+    },
+    "https://www.hk01.com/社會新聞/60298792/大埔宏福苑火災-宏業工程另兩屋苑內地棚網報告-沒查詢到文件": {
+      "title": "大埔宏福苑火災｜宏業工程另兩屋苑內地棚網報告「沒查詢到文件」",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:53:35.762177",
+      "archive_path": "content/news/HK01/archive/大埔宏福苑火災宏業工程另兩屋苑內地棚網報告沒查詢到文件"
+    },
+    "https://www.hk01.com/突發/60298799/宏福苑大火災-市民社區會堂外自發獻花悼念-留心意卡打氣": {
+      "title": "宏福苑大火災︱市民社區會堂外自發獻花悼念 留心意卡打氣",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:53:41.407524",
+      "archive_path": "content/news/HK01/archive/宏福苑大火災市民社區會堂外自發獻花悼念-留心意卡打氣"
+    },
+    "https://www.hk01.com/突發/60298449/宏福苑大火-穗禾苑200人開緊急大會-難掩激動-質問拆棚等問題": {
+      "title": "宏福苑大火｜穗禾苑200人開緊急大會 難掩激動 質問拆棚等問題",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:53:46.840714",
+      "archive_path": "content/news/HK01/archive/宏福苑大火穗禾苑200人開緊急大會-難掩激動-質問拆棚等問題"
+    },
+    "https://www.hk01.com/開罐/60298518/大埔宏福苑火災捐款-仁濟-樂善堂10大捐款渠道連結-服務一覽": {
+      "title": "大埔宏福苑火災捐款｜仁濟、樂善堂10大捐款渠道連結+服務一覽",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:53:55.509676",
+      "archive_path": "content/news/HK01/archive/大埔宏福苑火災捐款仁濟樂善堂10大捐款渠道連結服務一覽"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833396-20251126.htm?archive_date=2025-11-26": {
+      "title": "大埔宏福苑下午發生四級火造成四死三傷",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:53:57.238491",
+      "archive_path": "content/news/RTHK 香港電台/archive/大埔宏福苑下午發生四級火造成四死三傷"
+    },
+    "https://www.hk01.com/數碼生活/60298249/大埔宏福苑火災捐款-用alipayhk-app免手續費助仁濟救世軍援災民": {
+      "title": "大埔宏福苑火災捐款｜用AlipayHK app免手續費助仁濟救世軍援災民",
+      "source": "HK01",
+      "scraped_at": "2025-11-29T00:54:00.855489",
+      "archive_path": "content/news/HK01/archive/大埔宏福苑火災捐款用alipayhk-app免手續費助仁濟救世軍援災民"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833398-20251126.htm?archive_date=2025-11-26": {
+      "title": "大埔宏福苑四級火造成4死5傷　當中3人危殆",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:54:02.786057",
+      "archive_path": "content/news/RTHK 香港電台/archive/大埔宏福苑四級火造成4死5傷-當中3人危殆"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833388-20251126.htm?archive_date=2025-11-26": {
+      "title": "大埔宏福苑四級火造成四死三傷　其中兩人危殆",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:54:07.825851",
+      "archive_path": "content/news/RTHK 香港電台/archive/大埔宏福苑四級火造成四死三傷-其中兩人危殆"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833392-20251126.htm?archive_date=2025-11-26": {
+      "title": "大埔宏福苑四級火造成四死三傷　包括一名消防員殉職",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:54:13.954666",
+      "archive_path": "content/news/RTHK 香港電台/archive/大埔宏福苑四級火造成四死三傷-包括一名消防員殉職"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833366-20251126.htm?archive_date=2025-11-26": {
+      "title": "大埔宏福苑宏昌閣三級火　至少一名男子嚴重燒傷",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:54:20.139552",
+      "archive_path": "content/news/RTHK 香港電台/archive/大埔宏福苑宏昌閣三級火-至少一名男子嚴重燒傷"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833365-20251126.htm?archive_date=2025-11-26": {
+      "title": "大埔宏福苑宏昌閣外牆棚架起火　多名住客報案稱被困",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:54:26.538336",
+      "archive_path": "content/news/RTHK 香港電台/archive/大埔宏福苑宏昌閣外牆棚架起火-多名住客報案稱被困"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833373-20251126.htm?archive_date=2025-11-26": {
+      "title": "大埔宏福苑宏昌閣發生大火　警方陸續收住客報案稱未能逃生",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:54:32.284690",
+      "archive_path": "content/news/RTHK 香港電台/archive/大埔宏福苑宏昌閣發生大火-警方陸續收住客報案稱未能逃生"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833374-20251126.htm?archive_date=2025-11-26": {
+      "title": "大埔宏福苑火警升為四級　至少一男一女嚴重燒傷昏迷",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:54:38.580979",
+      "archive_path": "content/news/RTHK 香港電台/archive/大埔宏福苑火警升為四級-至少一男一女嚴重燒傷昏迷"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833448-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜13死23傷　李家超到臨時庇護中心視察",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:54:44.166830",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火13死23傷-李家超到臨時庇護中心視察"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833408-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜37歲消防員殉職",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:54:50.395700",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火37歲消防員殉職"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833411-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜周思傑：按法例規定大廈維修外牆棚網需具阻燃功能",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:54:56.696162",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火周思傑按法例規定大廈維修外牆棚網需具阻燃功能"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833424-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜增至13死15傷",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:55:03.503630",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火增至13死15傷"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833451-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜增至13死30傷　傷者7人危殆12人嚴重",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:55:08.845791",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火增至13死30傷-傷者7人危殆12人嚴重"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833412-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜大埔多條道路封閉　駕駛人士需改用其他道路",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:55:15.293861",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火大埔多條道路封閉-駕駛人士需改用其他道路"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833450-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜大埔王肇枝中學後山起火　救護車到場",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:55:21.570370",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火大埔王肇枝中學後山起火-救護車到場"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833409-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜大火升為五級　現場所見部分大廈火勢加劇",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:55:27.895860",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火大火升為五級-現場所見部分大廈火勢加劇"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833406-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜大火升為五級　至今4死5傷其中3人危殆",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:55:34.144488",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火大火升為五級-至今4死5傷其中3人危殆"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833453-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜政府加開三個臨時庇護中心",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:55:40.022696",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火政府加開三個臨時庇護中心"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833440-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜教育局：大埔區多間學校明天停課",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:55:45.715164",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火教育局大埔區多間學校明天停課"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833434-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜明日及後日共4場立法會選舉論壇暫停舉行",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:55:52.467528",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火明日及後日共4場立法會選舉論壇暫停舉行"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833413-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜李家超主持跨部門緊急會議　對多人傷亡極度哀傷",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:55:58.819720",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火李家超主持跨部門緊急會議-對多人傷亡極度哀傷"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833432-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜楊何蓓茵對消防員何偉豪不幸殉職表示沉痛哀悼",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:56:05.039157",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火楊何蓓茵對消防員何偉豪不幸殉職表示沉痛哀悼"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833426-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜消防籲被困住戶留在單位緊閉門窗待救",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:56:10.935951",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火消防籲被困住戶留在單位緊閉門窗待救"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833425-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜消防處指高溫及火勢猛烈致部分樓層未能攻入",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:56:17.613941",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火消防處指高溫及火勢猛烈致部分樓層未能攻入"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833414-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜消防處社交專頁大頭貼及封面相片轉為黑白色",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:56:23.593800",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火消防處社交專頁大頭貼及封面相片轉為黑白色"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833452-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜港澳辦稱堅決貫徹習近平重要指示精神",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:56:29.772207",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火港澳辦稱堅決貫徹習近平重要指示精神"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833449-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜港鐵明早增加一列東鐵列車和班次　加強人手",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:56:35.619087",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火港鐵明早增加一列東鐵列車和班次-加強人手"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833419-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜當局加開臨時庇護中心",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:56:41.280520",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火當局加開臨時庇護中心"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833433-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜紅十字會派員支援受影響巿民　樂善堂啟動基金協助",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:56:47.054160",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火紅十字會派員支援受影響巿民-樂善堂啟動基金協助"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833441-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜習近平向大埔大火遇難人員表示哀悼",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:56:52.165941",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火習近平向大埔大火遇難人員表示哀悼"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833430-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜警方熱線助受影響巿民尋找失蹤或失聯親友",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:56:58.016315",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火警方熱線助受影響巿民尋找失蹤或失聯親友"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833416-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜運輸署籲巿民盡量使用鐵路服務",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:57:03.746202",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火運輸署籲巿民盡量使用鐵路服務"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833437-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜運輸署：多個路段仍封閉　籲市民明早留意交通安排",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:57:11.309803",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火運輸署多個路段仍封閉-籲市民明早留意交通安排"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833418-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜鄧炳強對何偉豪殉職深感悲痛",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:57:17.357542",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火鄧炳強對何偉豪殉職深感悲痛"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833403-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜陸續有傷者獲救　有居民稱最初不知道火警",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:57:22.562291",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火陸續有傷者獲救-有居民稱最初不知道火警"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833438-20251126.htm?archive_date=2025-11-26": {
+      "title": "宏福苑五級火｜香港撒瑪利亞防止自殺會設立突發事件專線",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:57:28.858131",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火香港撒瑪利亞防止自殺會設立突發事件專線"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833385-20251126.htm?archive_date=2025-11-26": {
+      "title": "據了解有消防員在大埔宏福苑四級火中受傷",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:57:34.908088",
+      "archive_path": "content/news/RTHK 香港電台/archive/據了解有消防員在大埔宏福苑四級火中受傷"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833319-20251126.htm?archive_date=2025-11-26": {
+      "title": "習近平：要確保實現加沙全面持久停火　盡快改善加沙人道局勢",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:57:40.662255",
+      "archive_path": "content/news/RTHK 香港電台/archive/習近平要確保實現加沙全面持久停火-盡快改善加沙人道局勢"
+    },
+    "https://news.rthk.hk/rthk/en/component/k2/1833446-20251126.htm?archive_date=2025-11-26": {
+      "title": "'Commuters should plan trips due to Tai Po fire'",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:57:46.803097",
+      "archive_path": "content/news/RTHK 香港電台/archive/commuters-should-plan-trips-due-to-tai-po-fire"
+    },
+    "https://news.rthk.hk/rthk/en/component/k2/1833431-20251126.htm?archive_date=2025-11-26": {
+      "title": "'Hard to predict when killer blaze would be put out'",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:57:53.036311",
+      "archive_path": "content/news/RTHK 香港電台/archive/hard-to-predict-when-killer-blaze-would-be-put-out"
+    },
+    "https://news.rthk.hk/rthk/en/component/k2/1833389-20251126.htm?archive_date=2025-11-26": {
+      "title": "13 dead, 15 injured in Tai Po inferno",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:57:58.637952",
+      "archive_path": "content/news/RTHK 香港電台/archive/13-dead-15-injured-in-tai-po-inferno"
+    },
+    "https://news.rthk.hk/rthk/en/component/k2/1833420-20251126.htm?archive_date=2025-11-26": {
+      "title": "CE offers condolences over deadly Tai Po blaze",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:58:04.814091",
+      "archive_path": "content/news/RTHK 香港電台/archive/ce-offers-condolences-over-deadly-tai-po-blaze"
+    },
+    "https://news.rthk.hk/rthk/en/component/k2/1833370-20251126.htm?archive_date=2025-11-26": {
+      "title": "Casualties, 'people trapped' as multiple blocks ablaze",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:58:10.392445",
+      "archive_path": "content/news/RTHK 香港電台/archive/casualties-people-trapped-as-multiple-blocks-ablaze"
+    },
+    "https://news.rthk.hk/rthk/en/component/k2/1833442-20251126.htm?archive_date=2025-11-26": {
+      "title": "Xi expresses condolences to Tai Po fire victims",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:58:16.148376",
+      "archive_path": "content/news/RTHK 香港電台/archive/xi-expresses-condolences-to-tai-po-fire-victims"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833566-20251127.htm?archive_date=2025-11-27": {
+      "title": "宏福苑五級火｜3人被捕　疑有人使用未符防火標準外牆保護網",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:58:21.771127",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火3人被捕-疑有人使用未符防火標準外牆保護網"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833494-20251127.htm?archive_date=2025-11-27": {
+      "title": "宏福苑五級火｜44死58傷　消防處稱陸續救出傷者",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:58:27.751588",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火44死58傷-消防處稱陸續救出傷者"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833508-20251127.htm?archive_date=2025-11-27": {
+      "title": "宏福苑五級火｜不少居民仍未能聯絡上家人　感到非常擔心",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:58:32.978381",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火不少居民仍未能聯絡上家人-感到非常擔心"
+    },
+    "https://news.rthk.hk/rthk/ch/component/k2/1833568-20251127.htm?archive_date=2025-11-27": {
+      "title": "宏福苑五級火｜中國紅十字會捐贈200萬元人民幣支持救援行動",
+      "source": "RTHK 香港電台",
+      "scraped_at": "2025-11-29T00:58:39.001645",
+      "archive_path": "content/news/RTHK 香港電台/archive/宏福苑五級火中國紅十字會捐贈200萬元人民幣支持救援行動"
+    }
+  },
+  "last_updated": "2025-11-29T00:58:39.001654"
+}
